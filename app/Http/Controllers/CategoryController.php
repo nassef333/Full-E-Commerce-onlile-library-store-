@@ -50,7 +50,6 @@ class CategoryController extends Controller
         // return $request;
         $category = new Category;
         $category->name = $request->name;
-        $category->description = $request->description;
         $category->img = $request->file('img')->store('category', 'public');
         $category->save();
         return redirect('admin-category');

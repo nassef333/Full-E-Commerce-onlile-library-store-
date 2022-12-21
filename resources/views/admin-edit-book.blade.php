@@ -6,9 +6,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Booksto - Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>BookFacto</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" href="/storage/logo.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/dataTables.bootstrap4.min.css">
@@ -29,7 +29,7 @@
         <!-- Sidebar  -->
         <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
-                <a href="index.html" class="header-logo">
+                <a href="{{url('admin-dashboard')}}" class="header-logo">
                     <!-- <img src="images/logo.png" class="img-fluid rounded-normal" alt=""> -->
                     <div class="logo-title">
                        <span class="text-primary text-uppercase">BookFacto</span>
@@ -105,8 +105,8 @@
                             
                             
                             <li class="line-height pt-3">
-                                <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                              <div class="caption">
+                                <a href='{{url("profile")}}' class="iq-waves-effect d-flex align-items-center">
+                                    <div class="caption">
                                  <h6 class="mb-1 line-height">{{$user->firstname ." ". $user->lastname}}</h6>
                                  <p class="text-danger">Admin</p>
                               </div>

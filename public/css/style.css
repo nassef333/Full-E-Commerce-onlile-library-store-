@@ -5,6 +5,7 @@ Design and Developed by: iqonicthemes.in
 NOTE: This file contains the styling for responsive Template.
 */
 
+
 /*================================================
 [  Table of contents  ]
 ================================================
@@ -60,6 +61,7 @@ NOTE: This file contains the styling for responsive Template.
 [ End table content ]
 ======================================*/
 
+
 /*--------------------------------------------------------------------
                             General
 ---------------------------------------------------------------------*/
@@ -82,6 +84,7 @@ NOTE: This file contains the styling for responsive Template.
     text-shadow: none;
 }
 
+
 /* Definition Lists */
 
 dl dd {
@@ -91,6 +94,7 @@ dl dd {
 dl dd:last-child {
     margin-bottom: 0px;
 }
+
 
 /* Table */
 
@@ -107,6 +111,7 @@ a:hover {
 .dropdown-menu {
     border-radius: 5px;
 }
+
 
 /* scroller */
 
@@ -138,11 +143,13 @@ a:hover {
     background-color: var(--iq-light-primary);
 }
 
+
 /* Form */
 
 #sidebar-scrollbar {
     height: 100%;
 }
+
 
 /*---------------------------------------------------------------------
                                   Badge
@@ -157,6 +164,7 @@ a:hover {
 .breadcrumb.bg-primary .breadcrumb-item+.breadcrumb-item::before {
     color: var(--iq-white);
 }
+
 
 /*---------------------------------------------------------------------
                                Media Support
@@ -226,6 +234,7 @@ a:hover {
     text-align: center;
 }
 
+
 /*---------------------------------------------------------------------
                                   Best Sellers
 -----------------------------------------------------------------------*/
@@ -246,6 +255,7 @@ a:hover {
 .iq-card .list-star li {
     margin-right: 0;
 }
+
 
 /*---------------------------------------------------------------------
                                   Profile-Avatar
@@ -342,6 +352,7 @@ a:hover {
     background-position: center;
 }
 
+
 /*---------------------------------------------------------------------
                                   Countdown
 -----------------------------------------------------------------------*/
@@ -377,6 +388,7 @@ a:hover {
     padding: 11px 30px;
 }
 
+
 /*---------------------------------------------------------------------
                                   Progressbar
 -----------------------------------------------------------------------*/
@@ -398,6 +410,7 @@ a:hover {
     width: 0;
     border-radius: 5px;
 }
+
 
 /*---------------------------------------------------------------------
                              Dropdown Menu
@@ -438,6 +451,7 @@ a:hover {
     color: var(--iq-primary);
 }
 
+
 /*--------------*/
 
 .iq-card-header select.form-control {
@@ -451,6 +465,7 @@ a:hover {
     width: 180px;
 }
 
+
 /*---------------------------------------------------------------------
                              Badge Img Tag
 -----------------------------------------------------------------------*/
@@ -460,6 +475,7 @@ a:hover {
     top: 15px;
     left: 15px;
 }
+
 
 /*---------------------------------------------------------------------
                              list Style 1
@@ -510,6 +526,7 @@ a:hover {
     text-decoration: none;
 }
 
+
 /*---------------------------------------------------------------------
                              Icon Box
 -----------------------------------------------------------------------*/
@@ -527,6 +544,7 @@ a:hover {
 .iq-icon-box:hover {
     text-decoration: none;
 }
+
 
 /*---------------------------------------------------------------------
                              Tasks Card
@@ -547,6 +565,7 @@ a:hover {
     margin: 0;
     padding: 0;
 }
+
 
 /*---------------------------------------------------------------------
                                Sign In
@@ -661,6 +680,7 @@ a:hover {
     color: #d9d9d9;
 }
 
+
 /*--------------------------*/
 
 .social-container {
@@ -765,6 +785,7 @@ a:hover {
     transform: translateX(20%);
 }
 
+
 /*---------------------------------------------------------------------
                                Dash Hover
 -----------------------------------------------------------------------*/
@@ -781,6 +802,7 @@ a:hover {
     background-color: var(--iq-border-light);
 }
 
+
 /*---------------------------------------------------------------------
                                Waves Effect
 -----------------------------------------------------------------------*/
@@ -788,6 +810,7 @@ a:hover {
 .iq-waves-effect {
     position: relative;
 }
+
 
 /*  Ripple */
 
@@ -811,6 +834,7 @@ a:hover {
         opacity: 0;
     }
 }
+
 
 /*---------------------------------------------------------------------
                                 Sidebar
@@ -839,9 +863,11 @@ a:hover {
     width: 100%;
 }
 
+
 /*---------------------------------------------------------------------
                              Sidebar Menu
 -----------------------------------------------------------------------*/
+
 
 /* Form */
 
@@ -1046,6 +1072,7 @@ body.sidebar-main .iq-sidebar .iq-menu li a[aria-expanded="false"].collapsed {
     height: 75%;
 }
 
+
 /*------------------------*/
 
 .iq-sidebar-menu .iq-menu li ul {
@@ -1093,7 +1120,9 @@ body.sidebar-main .iq-sidebar .iq-menu li a[aria-expanded="false"].collapsed {
     margin: 0;
 }
 
+
 /*body.sidebar-main .iq-sidebar .iq-sidebar-menu .iq-menu li ul.iq-submenu-data li > a, body.sidebar-main .iq-sidebar:hover .iq-sidebar-menu .iq-menu li ul.iq-submenu-data li > a { padding-left: 20px; }*/
+
 
 /*---------------------------------- */
 
@@ -1108,6 +1137,7 @@ body.sidebar-main .iq-sidebar .iq-menu li a[aria-expanded="false"].collapsed {
 #sidebar-bottom .image img {
     max-width: 100%;
 }
+
 
 /*---------------------------------------------------------------------
                              Top Menu
@@ -1291,6 +1321,7 @@ body.sidebar-main .iq-top-navbar {
     border-radius: 50%;
     -webkit-border-radius: 50%;
 }
+
 
 /*.nav-item span.dots.dots-danger { height: 10px; width: 10px; font-size: 0; text-align: center; padding: 0; position: absolute; top: -4px; right: -2px; border: 2px solid var(--iq-white); animation: shadow-pulse-dots-danger 1s infinite; border-radius: 50%; -webkit-border-radius: 50%; }*/
 
@@ -1477,6 +1508,7 @@ div#lottie-fullscreen svg path {
     display: none;
 }
 
+
 /*---------- Sidebar Logo --------------*/
 
 .iq-sidebar-logo {
@@ -1596,6 +1628,7 @@ div#lottie-fullscreen svg path {
     transform: rotate(-90deg) translateX(-3px);
 }
 
+
 /*----------------------*/
 
 .iq-top-navbar .iq-sub-dropdown {
@@ -1630,12 +1663,14 @@ div#lottie-fullscreen svg path {
     border-radius: 5px 5px 0 0;
 }
 
+
 /* ----------------------------------------------
  * Generated by Animista on 2019-12-22 15:30:2
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info.
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
+
 
 /**
  * ----------------------------------------
@@ -1747,6 +1782,7 @@ div#lottie-fullscreen svg path {
     left: 15px;
 }
 
+
 /*---------------------------------------------------------------------
                               Content Page
 -----------------------------------------------------------------------*/
@@ -1854,6 +1890,7 @@ body.sidebar-main .content-page {
     -webkit-box-orient: vertical;
 }
 
+
 /*-----------------*/
 
 #newrealease-slider.slick-initialized .slick-slide {
@@ -1914,6 +1951,7 @@ body.sidebar-main .content-page {
     z-index: 30;
 }
 
+
 /*-----------------*/
 
 .quantity {
@@ -1954,6 +1992,7 @@ body.sidebar-main .content-page {
     border-color: var(--iq-primary);
 }
 
+
 /* --------------- */
 
 .iq-card.iq-border-box {
@@ -1978,6 +2017,7 @@ body.sidebar-main .content-page {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
+
 /*--------------------*/
 
 .iq-card-header-list {
@@ -1999,6 +2039,7 @@ body.sidebar-main .content-page {
     text-decoration: none;
 }
 
+
 /* ------------------ */
 
 .friend-list-items.nav-pills .nav-link a {
@@ -2014,6 +2055,7 @@ body.sidebar-main .content-page {
 .iq-friendlist-block {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 
 /* ------------------ */
 
@@ -2047,6 +2089,7 @@ body.sidebar-main .content-page {
     border-radius: 5px 0 0 5px;
 }
 
+
 /* ------------------ */
 
 .group-icon {
@@ -2060,6 +2103,7 @@ ul.iq-week-data h6 {
 .social-media-block .data-block {
     flex: 1;
 }
+
 
 /* ------------------ */
 
@@ -2225,6 +2269,7 @@ div#post-modal-data .modal .modal-dialog {
     line-height: 65px;
 }
 
+
 /*----------------------------*/
 
 button.banner-button {
@@ -2286,6 +2331,7 @@ button.banner-button {
     right: 10px;
 }
 
+
 /*----------------------------*/
 
 .profile-icon {
@@ -2297,6 +2343,7 @@ button.banner-button {
     font-weight: 700;
     border-radius: 50%;
 }
+
 
 /* ---------------- */
 
@@ -2310,6 +2357,7 @@ button.banner-button {
     line-height: 130px;
     position: absolute;
 }
+
 
 /* ------------ */
 
@@ -2365,6 +2413,7 @@ button.banner-button {
     color: var(--iq-primary);
 }
 
+
 /*------------------------------ */
 
 .iq-page-menu-horizontal .iq-box-relative {
@@ -2404,6 +2453,7 @@ button.banner-button {
     top: 105px
 }
 
+
 /* ------------------ */
 
 .big-card {
@@ -2433,6 +2483,7 @@ button.banner-button {
     position: relative;
 }
 
+
 /* -------- Browse Books ---------- */
 
 .iq-card.browse-bookcontent,
@@ -2445,6 +2496,7 @@ button.banner-button {
     -o-transition: all 0.5s ease-out 0s;
     transition: all 0.5s ease-out 0s;
 }
+
 
 /*.iq-card.browse-bookcontent:hover,.iq-card.search-bookcontent:hover { background: var(--iq-light-card) !important; box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1); }*/
 
@@ -2504,6 +2556,7 @@ li:hover .image-overlap-shadow .view-book {
     transition: all 0.3s ease-out 0s;
 }
 
+
 /* -------- CheckOut Page ---------- */
 
 .card-block {
@@ -2549,6 +2602,7 @@ li.checkout-product:last-child {
     padding-bottom: 0;
 }
 
+
 /*------------------*/
 
 #quantity {
@@ -2570,6 +2624,7 @@ button.qty-btn {
 .form-add-btn {
     margin-bottom: 20px;
 }
+
 
 /*---------------------------------------------------------------------
                               Error Page
@@ -2603,6 +2658,7 @@ button.qty-btn {
 .iq-maintenance>img {
     width: 18%;
 }
+
 
 /*---------------------------------------------------------------------
                                OWL Carousel
@@ -2677,6 +2733,7 @@ button.qty-btn {
     background: #4ac4f3;
     color: var(--iq-white);
 }
+
 
 /* Dots */
 
@@ -2782,6 +2839,7 @@ button.qty-btn {
     font-size: 22px;
 }
 
+
 /*---------------------------------------------------------------------
                                Timeline
 -----------------------------------------------------------------------*/
@@ -2814,6 +2872,7 @@ button.qty-btn {
     text-align: center;
 }
 
+
 /*---------------------------------------------------------------------
                                Team
 -----------------------------------------------------------------------*/
@@ -2837,6 +2896,7 @@ button.qty-btn {
     margin: 0 auto;
 }
 
+
 /*------------------------------*/
 
 .iq-team-1 {
@@ -2851,6 +2911,7 @@ button.qty-btn {
     left: 0;
     width: 100%;
 }
+
 
 /*---------------------------------------------------------------------
                            User Add Block
@@ -2908,6 +2969,7 @@ button.qty-btn {
 .user-add-list {
     padding: 30px;
 }
+
 
 /*---------------------------------------------------------------------
                              Email list
@@ -2973,6 +3035,7 @@ button.qty-btn {
     margin-bottom: 0;
 }
 
+
 /*----------------------------------*/
 
 .iq-email-to-list ul {
@@ -3023,6 +3086,7 @@ button.qty-btn {
     left: -20px;
 }
 
+
 /*----------------------------------*/
 
 .iq-email-search {
@@ -3047,6 +3111,7 @@ button.qty-btn {
 .iq-email-search .search-link:hover {
     text-decoration: none;
 }
+
 
 /*----------------------------------*/
 
@@ -3178,6 +3243,7 @@ button.qty-btn {
     right: 0;
 }
 
+
 /*----------------------------------*/
 
 .iq-inbox-details tr td {
@@ -3198,6 +3264,7 @@ button.qty-btn {
     margin-left: 15px;
     flex: 1;
 }
+
 
 /*---------------------------------------------------------------------
                              Booking list
@@ -3315,6 +3382,7 @@ button.qty-btn {
     margin-bottom: 30px;
 }
 
+
 /*----------------------------------------------------------------------
                         Chart
  ----------------------------------------------------------------------*/
@@ -3328,6 +3396,7 @@ button.qty-btn {
 div#iq-sale-chart {
     min-height: 218px !important;
 }
+
 
 /*-----------------------------------------------------------------
                         Material Card Style1
@@ -3359,6 +3428,7 @@ div#iq-sale-chart {
     font-weight: normal;
 }
 
+
 /*-----------------------------------------------------------------
                         Material Card Style2
 ----------------------------------------------------------------- */
@@ -3373,6 +3443,7 @@ div#iq-sale-chart {
     margin-top: -5px;
     margin-left: -50px;
 }
+
 
 /*-----------------------------------------------------------------
                         Circle Progressbar
@@ -3484,6 +3555,7 @@ div#iq-sale-chart {
     width: 110px;
 }
 
+
 /*-----------------------------------------------------------------
                         Tikit Booking List
 ------------------------------------------------------------------- */
@@ -3566,6 +3638,7 @@ div#iq-sale-chart {
     float: left;
 }
 
+
 /*-----------------------------------------------------------------
                         Right Sidebar Menu
 ------------------------------------------------------------------- */
@@ -3630,6 +3703,7 @@ div#iq-sale-chart {
     -moz-border-radius: 90px;
     border-radius: 90px;
 }
+
 
 /*---------------------------------------------------------------------
 FAQ
@@ -3703,6 +3777,7 @@ FAQ
     padding-right: 45px;
 }
 
+
 /*---------------------------------------------------------------------
 Table
 -----------------------------------------------------------------------*/
@@ -3755,6 +3830,7 @@ div.dataTables_wrapper div.dataTables_info {
     padding-top: 20px;
 }
 
+
 /*---------------------------------------------------------------------
 Animation Card
 -----------------------------------------------------------------------*/
@@ -3788,6 +3864,7 @@ Animation Card
     margin-top: 0;
 }
 
+
 /*------------*/
 
 .an-img-two {
@@ -3807,6 +3884,7 @@ Animation Card
     z-index: -1;
 }
 
+
 /*------------*/
 
 .offer-an-img {
@@ -3815,6 +3893,7 @@ Animation Card
     width: 695px;
     left: -100px;
 }
+
 
 /*---------------------------------------------------------------------
 Footer
@@ -3907,6 +3986,7 @@ body.sidebar-main .iq-footer {
     padding: 10px 0px;
 }
 
+
 /*---------------------------------------------------------------------
 Map Profile
 -----------------------------------------------------------------------*/
@@ -3933,12 +4013,14 @@ Map Profile
     border-radius: 5px;
 }
 
+
 /* Track */
 
 ::-webkit-scrollbar-track {
     background: var(--iq-border-light);
     border-radius: 5px;
 }
+
 
 /* Handle */
 
@@ -3947,12 +4029,14 @@ Map Profile
     border-radius: 5px;
 }
 
+
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--iq-dark);
     border-radius: 5px;
 }
+
 
 /*---------------------------------------------------------------------
 Mail Inbox
@@ -4046,6 +4130,7 @@ button.close-popup {
     box-shadow: none;
 }
 
+
 /* colors changes in radio button, checkbox, switch */
 
 .custom-control-input:focus~.custom-control-label::before {
@@ -4106,6 +4191,7 @@ button.close-popup {
     border-color: var(--iq-info) !important;
 }
 
+
 /* checkbox with icon */
 
 .custom-checkbox.checkbox-icon label i {
@@ -4128,6 +4214,7 @@ button.close-popup {
 .custom-checkbox.checkbox-icon input:checked~label::after {
     display: none;
 }
+
 
 /* switch with icon */
 
@@ -4283,6 +4370,7 @@ button.close-popup {
     height: 500px;
 }
 
+
 /*---------------------------------------------------------------------
 slick Arrow
 -----------------------------------------------------------------------*/
@@ -4309,6 +4397,7 @@ slick Arrow
 .slick-arrow:hover {
     text-decoration: none;
 }
+
 
 /*---------------------------------------------------------------------
 Calender
@@ -4507,6 +4596,7 @@ Calender
     fill: var(--iq-primary);
 }
 
+
 /*---------------------------------------------------------------------
  Wizard
 -----------------------------------------------------------------------*/
@@ -4612,6 +4702,7 @@ Calender
     width: 100%;
     object-fit: cover
 }
+
 
 /* validate */
 
@@ -4749,6 +4840,7 @@ fieldset[disabled] .btn {
     box-shadow: none;
 }
 
+
 /* vertical */
 
 #form-wizard3 fieldset:not(:first-of-type) {
@@ -4845,6 +4937,7 @@ fieldset[disabled] .btn {
 #top-tabbar-vertical li.active i {
     background: var(--iq-white) !important;
 }
+
 
 /*---------------------------------------------------------------------
 Chat
@@ -5160,6 +5253,7 @@ div.sidebar-toggle {
     display: none;
 }
 
+
 /*---------------------------------------------------------------------
 Profile Page
 -----------------------------------------------------------------------*/
@@ -5362,6 +5456,7 @@ div#profile-profile a {
     color: var(--iq-body-text);
 }
 
+
 /*---------------------------------------------------------------------
 Profile Edit 
 -----------------------------------------------------------------------*/
@@ -5428,6 +5523,7 @@ ul.iq-edit-profile li:first-child a {
 ul.iq-edit-profile li:last-child a {
     border-radius: 0 5px 5px 0;
 }
+
 
 /*---------------------------------------------------------------------
 Todo Page
@@ -5525,6 +5621,7 @@ ul.todo-task-lists li.active-task {
     display: block;
 }
 
+
 /*---------------------------------------------------------------------
 Privacy Policy Page
 -----------------------------------------------------------------------*/
@@ -5539,6 +5636,7 @@ Privacy Policy Page
 .data-privacy {
     margin: 30px 0;
 }
+
 
 /*---------------------------------------------------------------------
 User List Page
@@ -5570,6 +5668,7 @@ User List Page
     width: auto;
 }
 
+
 /*---------------------------------------------------------------------
 Add User Page
 -----------------------------------------------------------------------*/
@@ -5592,12 +5691,8 @@ Add User Page
 }
 
 
-
-
-
-
-
 /* rating */
+
 .rating-css div {
     color: #9d9d9d;
     font-size: 10px;
@@ -5606,25 +5701,27 @@ Add User Page
     /* text-align: center; */
     text-transform: uppercase;
     padding: 20px 0;
-  }
-  .rating-css input {
+}
+
+.rating-css input {
     display: none;
-  }
-  .rating-css input + label {
+}
+
+.rating-css input+label {
     font-size: 30px;
     text-shadow: 1px 1px 0 #000000;
     cursor: pointer;
-  }
-  .rating-css input:checked + label ~ label {
+}
+
+.rating-css input:checked+label~label {
     color: #b4afaf;
-  }
-  .fa-star{
-color: rgb(255, 204, 0);
-  }
-  .rating-css label:active {
+}
+
+.fa-star {
+    color: rgb(255, 204, 0);
+}
+
+.rating-css label:active {
     transform: scale(0.8);
     transition: 0.3s ease;
-  }
-
-
-  
+}

@@ -5,9 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Booksto - Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>BookFacto</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" href="/storage/logo.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/dataTables.bootstrap4.min.css">
@@ -94,8 +94,8 @@
                             
                             
                             <li class="line-height pt-3">
-                                <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                              <div class="caption">
+                                <a href='{{url("profile")}}' class="iq-waves-effect d-flex align-items-center">
+                                    <div class="caption">
                                  <h6 class="mb-1 line-height">{{$user->firstname ." ". $user->lastname}}</h6>
                                  <p class="text-danger">Admin</p>
                               </div>
@@ -125,10 +125,6 @@
                                     <div class="form-group">
                                         <label>Category Name:</label>
                                         <input type="text" class="form-control" name="name" value="{{$category->name}}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Category Description:</label>
-                                        <textarea class="form-control" rows="4" name="description">{{$category->description}}</textarea>
                                     </div>
                                     <img src='{{asset("categories/$category->img")}}' alt="">
                                     <div class="form-group">

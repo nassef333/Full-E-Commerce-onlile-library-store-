@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public function interests()
     {
-        return $this->belongsToOne(Category::class, 'interests');
+        return $this->belongsToMany(Category::class, 'interests');
     }
 
     /**

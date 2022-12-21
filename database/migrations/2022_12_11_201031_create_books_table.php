@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('author');
-            $table->string('category');
             $table->integer('noPages');
             $table->string('price');
             $table->string('img')->nullable();

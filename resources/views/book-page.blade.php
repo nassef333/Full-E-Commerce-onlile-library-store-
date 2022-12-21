@@ -5,9 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Book</title>
+    <title>BookFacto</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" href="/storage/logo.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <!-- Typography CSS -->
@@ -23,9 +23,10 @@
     <!-- Wrapper Start -->
     <div class="wrapper">
         <!-- Sidebar  -->
+
         <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
-                <a href="/index.html" class="header-logo">
+                <a href="{{url('/')}}" class="header-logo">
                     <!-- <img src="images/logo.png" class="img-fluid rounded-normal" alt=""> -->
                     <div class="logo-title">
                        <span class="text-primary text-uppercase">BookFacto</span>
@@ -45,11 +46,13 @@
                         <li class="active active-menu">
                             <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Shop</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                                <li><a href="{{url('/')}}"><i class="las la-house-damage"></i>Home Page</a></li>
-                                <li><a href='#'><i class="ri-function-line"></i>Category Page</a></li>
+                                <li><a href="/"><i class="las la-house-damage"></i>Home Page</a></li>
+                                <li><a href='{{url("category/$book->category_id")}}'><i class="ri-function-line"></i>Category Page</a></li>
                                 <li class="active"><a href="#"><i class="ri-book-line"></i>Book Page</a></li>
-                                <li><a href="{{url('cart')}}"><i class="ri-checkbox-multiple-blank-line"></i>Checkout</a></li>
+                                <li><a href="cart"><i class="ri-checkbox-multiple-blank-line"></i>Checkout</a></li>
                                 <li><a href="{{url('wishlist')}}"><i class="ri-heart-line"></i>wishlist</a></li>
+                                <li><a href="{{url('search-books')}}"><i class="ri-file-pdf-line"></i>Search</a></li>
+                                <li><a href="{{url('compare-books')}}"><i class="ri-mastercard-line"></i>Compare books</a></li>
                             </ul>
                         </li>
                   
@@ -58,7 +61,7 @@
                 <div id="sidebar-bottom" class="p-3 position-relative">
                     <div class="iq-card">
                         <div class="iq-card-body">
-                         
+                          
                         </div>
                     </div>
                 </div>
@@ -113,7 +116,7 @@
                                             <div class="iq-sub-card">
                                                 <div class="media align-items-center">
                                                     <div class="">
-                                                        <img class="rounded" src="/images/favorite/{{$cart->img}}" alt="">
+                                                        <img class="rounded" src="/storage/{{$cart->img}}" alt="">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <h6 class="mb-0 ">{{$cart->name}}</h6>
@@ -131,8 +134,8 @@
                                 </div>
                             </li>
                             <li class="line-height pt-3">
-                                <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                              <img src='{{asset("storage/$user->img")}}' class="img-fluid rounded-circle mr-3" alt="user">
+                                <a href="profile" class="iq-waves-effect d-flex align-items-center">
+                                    <img src='{{asset("storage/$user->img")}}' class="img-fluid rounded-circle mr-3" alt="user">
                               <div class="caption">
                                  <h6 class="mb-1 line-height">{{$user->firstname." ".$user->lastname}}</h6>
                               </div>
@@ -253,7 +256,7 @@
                                                     <div class="rating-css">
                                                         <div class="star-icon">
                                                             <input type="hidden" name="book_id" id="" value='{{$book->id}}'>
-                                                            <input type="radio" value="1" name="rate"@if ($rating[0] == 1)
+                                                            <input type="radio" value="1" checked="checked" name="rate"@if ($rating[0] == 1)
                                                             {{'checked'}}
                                                             @endif id="rating1">
                                                             <label for="rating1" class="fa fa-star"></label>
@@ -330,7 +333,7 @@
                                     <h4 class="card-title mb-0">Similar Books</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href='{{url("category/$book->id")}}' class="btn btn-sm btn-primary view-more">View More</a>
+                                    <a href='{{url("category/$book->category_id")}}' class="btn btn-sm btn-primary view-more">View More</a>
                                 </div>
                             </div>
                             <div class="iq-card-body single-similar-contens">

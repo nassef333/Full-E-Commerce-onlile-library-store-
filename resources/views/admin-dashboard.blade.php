@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BOOKFACTO</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="/storage/logo.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Typography CSS -->
@@ -106,8 +106,8 @@
                             
                             
                             <li class="line-height pt-3">
-                                <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                              <div class="caption">
+                                <a href='{{url("profile")}}' class="iq-waves-effect d-flex align-items-center">
+                                    <div class="caption">
                                  <h6 class="mb-1 line-height">{{$user->firstname ." ". $user->lastname}}</h6>
                                  <p class="text-danger">Admin</p>
                               </div>

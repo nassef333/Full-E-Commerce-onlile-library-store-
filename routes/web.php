@@ -23,8 +23,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Can accessed by anyone
+Route::get('/', [HomeController::class, 'home']);
+
+//can accessed only when logged in
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', [HomeController::class, 'home']);
+    Route::get('profile', [UserController::class, 'profile']);
+    Route::post('updateUser', [UserController::class, 'updateUser']);
     Route::post('/add-rating', [RatingController::class, 'add']);
     Route::get('/book/{id}', [BookController::class, 'book']);
     Route::get('/category/{id}', [CategoryController::class, 'category']);
@@ -41,7 +46,33 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/deleteWish/{id}', [WishlistController::class, 'deleteWish']);
     Route::get('/addToInterests/{id}', [InterestsController::class, 'addToInterests']);
     Route::post('/addRate', [RatingController::class, 'addRate']);
-    Route::get('/checkout/{id}', [InterestsController::class, 'addToInterests']);
+    Route::get('/interest/{id}', [InterestsController::class, 'addToInterests']);
+    Route::get('/search-books', [BookController::class, 'searchBooks']);
+    Route::get('/compare-books', [BookController::class, 'compare']);
+    Route::post('/compareRequest', [BookController::class, 'compareRequest']);
+    // Route::view('/pages-pricing', 'pages-pricing');
+
+
+    Route::group(['middleware' => 'admin'], function () {
+        //admin
+            Route::get('/admin-dashboard', [Dashboard::class, 'dashboard']);
+        //admin category
+            Route::get('/admin-category', [CategoryController::class, 'allCategories']);
+            Route::get('/admin-add-category', [CategoryController::class, 'addCategory']);
+            Route::post('/storeCategory', [CategoryController::class, 'storeCategory']);
+            Route::get('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory']);
+            Route::get('/editCategory/{id}', [CategoryController::class, 'editCategory']);
+            Route::post('/updateCategory/{id}', [CategoryController::class, 'updateCategory']);
+        
+        //admin book
+            Route::get('/admin-books', [BookController::class, 'allBooks']);
+            Route::get('/admin-add-book', [BookController::class, 'addBook']);
+            Route::post('/storeBook', [BookController::class, 'storeBook']);
+            Route::get('/deleteBook/{id}', [BookController::class, 'deleteBook']);
+            Route::get('/editBook/{id}', [BookController::class, 'editBook']);
+            Route::post('/updateBook/{id}', [BookController::class, 'updateBook']);
+        });
+
 });
 
 
@@ -54,29 +85,12 @@ Route::group(["middleware" => "guest"], function () {
     Route::Post('logincheck', [UserController::class, 'logincheck']);
 });
 
-Route::group(['middleware' => 'admin'], function () {
-//admin
-    Route::get('/admin-dashboard', [Dashboard::class, 'dashboard']);
-//admin category
-    Route::get('/admin-category', [CategoryController::class, 'allCategories']);
-    Route::get('/admin-add-category', [CategoryController::class, 'addCategory']);
-    Route::post('/storeCategory', [CategoryController::class, 'storeCategory']);
-    Route::get('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory']);
-    Route::get('/editCategory/{id}', [CategoryController::class, 'editCategory']);
-    Route::post('/updateCategory/{id}', [CategoryController::class, 'updateCategory']);
-
-//admin book
-    Route::get('/admin-books', [BookController::class, 'allBooks']);
-    Route::get('/admin-add-book', [BookController::class, 'addBook']);
-    Route::post('/storeBook', [BookController::class, 'storeBook']);
-    Route::get('/deleteBook/{id}', [BookController::class, 'deleteBook']);
-    Route::get('/editBook/{id}', [BookController::class, 'editBook']);
-    Route::post('/updateBook/{id}', [BookController::class, 'updateBook']);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
-
-
-
-
-
-
-

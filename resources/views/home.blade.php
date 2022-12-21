@@ -6,8 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BOOKFACTO</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+/>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" href="storage/logo.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <!-- Typography CSS -->
@@ -25,7 +32,7 @@
         <!-- Sidebar  -->
         <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
-                <a href="index.html" class="header-logo">
+                <a href="{{url('/')}}" class="header-logo">
                     <!-- <img src="images/logo.png" class="img-fluid rounded-normal" alt=""> -->
                     <div class="logo-title">
                        <span class="text-primary text-uppercase">BookFacto</span>
@@ -45,20 +52,21 @@
                         <li class="active active-menu">
                             <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Shop</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                                <li class="active"><a href="#"><i class="las la-house-damage"></i>Home Page</a></li>
+                                <li class="active"><a href="/"><i class="las la-house-damage"></i>Home Page</a></li>
                                 <li><a href="#"><i class="ri-function-line"></i>Category Page</a></li>
                                 <li><a href="#"><i class="ri-book-line"></i>Book Page</a></li>
-                                <li><a href="{{url('cart')}}"><i class="ri-checkbox-multiple-blank-line"></i>Checkout</a></li>
+                                <li><a href="cart"><i class="ri-checkbox-multiple-blank-line"></i>Checkout</a></li>
                                 <li><a href="{{url('wishlist')}}"><i class="ri-heart-line"></i>wishlist</a></li>
+                                <li><a href="{{url('search-books')}}"><i class="ri-file-pdf-line"></i>Search</a></li>
+                                <li><a href="{{url('compare-books')}}"><i class="ri-mastercard-line"></i>Compare books</a></li>
                             </ul>
                         </li>
-                     
                     </ul>
                 </nav>
                 <div id="sidebar-bottom" class="p-3 position-relative">
                     <div class="iq-card">
                         <div class="iq-card-body">
-                         
+                          
                         </div>
                     </div>
                 </div>
@@ -73,7 +81,7 @@
                             <div class="main-circle"><i class="las la-bars"></i></div>
                         </div>
                         <div class="iq-navbar-logo d-flex justify-content-between">
-                            <a href="index.html" class="header-logo">
+                            <a href="/" class="header-logo">
                            <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
                            <div class="logo-title">
                               <span class="text-primary text-uppercase">BookFacto</span>
@@ -82,63 +90,80 @@
                         </div>
                     </div>
                     <div class="navbar-breadcrumb">
-                        <h5 class="mb-0">HOME Page</h5>
+                        <h5 class="mb-0">Home Page</h5>
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
                             </ul>
                         </nav>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                   <i class="ri-menu-3-line"></i>
                   </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto navbar-list">
-                            <li class="nav-item nav-icon">
-                                <a href="{{url('logout')}}" class=" iq-waves-effect text-gray rounded"><i class="ri-login-box-line ml-2 text-danger"></i></a>                           </a>
-                            </li>
-                            <li class="nav-item nav-icon dropdown">
-                                <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                           <i class="ri-shopping-cart-2-line"></i>
-                           <span class="badge badge-danger count-cart rounded-circle">{{$count}}</span>
-                           </a>
-                                <div class="iq-sub-dropdown">
-                                    <div class="iq-card shadow-none m-0">
-                                        <div class="iq-card-body p-0 toggle-cart-info">
-                                            <div class="bg-primary p-3">
-                                                <h5 class="mb-0 text-white">All Carts<small class="badge  badge-light float-right pt-1">{{$count}}</small></h5>
-                                            </div>
-                                            @foreach ($carts as $cart)
-                                            <div class="iq-sub-card">
-                                                <div class="media align-items-center">
-                                                    <div class="">
-                                                        <img class="rounded" src="/images/favorite/{{$cart->img}}" alt="">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <h6 class="mb-0 ">{{$cart->name}}</h6>
-                                                        <p class="mb-0">{{$cart->price}}$</p>
-                                                    </div>
-                                                    <a href='{{url("deleteCart/$cart->id")}}' class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></a>
+                  @if ($checkLogin)
+                  {{-- @dd(checkLogin) --}}
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-list">
+                        <li class="nav-item nav-icon">
+                            <a href="{{url('logout')}}" class=" iq-waves-effect text-gray rounded"><i class="ri-login-box-line ml-2 text-danger"></i></a>                           </a>
+                        </li>
+                        <li class="nav-item nav-icon dropdown">
+                            <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
+                       <i class="ri-shopping-cart-2-line"></i>
+                       <span class="badge badge-danger count-cart rounded-circle">{{$count}}</span>
+                       </a>
+                            <div class="iq-sub-dropdown">
+                                <div class="iq-card shadow-none m-0">
+                                    <div class="iq-card-body p-0 toggle-cart-info">
+                                        <div class="bg-primary p-3">
+                                            <h5 class="mb-0 text-white">All Carts<small class="badge  badge-light float-right pt-1">{{$count}}</small></h5>
+                                        </div>
+                                        @foreach ($carts as $cart)
+                                        <div class="iq-sub-card">
+                                            <div class="media align-items-center">
+                                                <div class="">
+                                                    <img class="rounded" src="/images/favorite/{{$cart->img}}" alt="">
                                                 </div>
-                                            </div>   
-                                            @endforeach
-                                            <div class="d-flex align-items-center text-center p-3">
-                                                <a class="btn btn-primary mr-2 iq-sign-btn" href="{{url('cart')}}" role="button">View Cart</a>
+                                                <div class="media-body ml-3">
+                                                    <h6 class="mb-0 ">{{$cart->name}}</h6>
+                                                    <p class="mb-0">{{$cart->price}}$</p>
+                                                </div>
+                                                <a href='{{url("deleteCart/$cart->id")}}' class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></a>
                                             </div>
+                                        </div>   
+                                        @endforeach
+                                        <div class="d-flex align-items-center text-center p-3">
+                                            <a class="btn btn-primary mr-2 iq-sign-btn" href="{{url('cart')}}" role="button">View Cart</a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </li>
+                        <li class="line-height pt-3">
+                            <a href="profile" class="iq-waves-effect d-flex align-items-center">
+                                <img src='{{asset("storage/$user->img")}}' class="img-fluid rounded-circle mr-3" alt="user">
+                          <div class="caption">
+                             <h6 class="mb-1 line-height">{{$user->firstname." ".$user->lastname}}</h6>
+                          </div>
+                       </a>
+                        </li>
+                    </ul>
+                </div>
+                @else
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-list mr-4">
+                        <ul class="flex space-x-6 mr-6 text-lg">
+                            <li>
+                                <a href="{{url('register')}}" class="text-dark"><i class="fa-solid fa-user-plus"></i> Register</a>
                             </li>
-                            <li class="line-height pt-3">
-                                <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                              <img src='{{asset("storage/$user->img")}}' class="img-fluid rounded-circle mr-3" alt="user">
-                              <div class="caption">
-                                 <h6 class="mb-1 line-height">{{$user->firstname." ".$user->lastname}}</h6>
-                              </div>
-                           </a>
+                            <li>
+                                <a href="{{url('login')}}" class="text-dark"><i class="fa-solid fa-arrow-right-to-bracket text-"></i>
+                                    Login</a>
                             </li>
                         </ul>
-                    </div>
+                    </ul>
+                </div>
+                @endif
                 </nav>
             </div>
         </div>

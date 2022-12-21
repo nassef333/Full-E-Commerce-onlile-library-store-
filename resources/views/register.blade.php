@@ -5,9 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Booksto - Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>BookFacto</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="/storage/logo.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Typography CSS -->
@@ -64,6 +64,13 @@
                                         @error('email')
                                         <p style="color:red"><b>*{{$message}}</b></p>
                                     @enderror
+                                    </div>                                    
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail2">Phone</label>
+                                        <input type="text" name="phone" class="form-control mb-0" id="exampleInputEmail2" placeholder="Enter Phone" value="{{old('phone')}}">
+                                        @error('phone')
+                                        <p style="color:red"><b>*{{$message}}</b></p>
+                                    @enderror
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
@@ -71,7 +78,7 @@
                                         @error('password')
                                         <p style="color:red"><b>*{{$message}}</b></p>
                                     @enderror
-                                    </div>                                    
+                                    </div>                                   
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Personal Image</label>
                                         <input type="file" name="img" class="form-control mb-0" id="exampleInputPassword1" placeholder="Password" value="{{old('img')}}">

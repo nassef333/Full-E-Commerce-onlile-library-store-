@@ -25,10 +25,24 @@ class HomeController extends Controller
         ->take(10)
         ->get();
 
-        
-        $user = User::find(Auth::id());
-        $carts = $user->carts->all();
-        $count = $user->carts->count();
+        $checkLogin = 0;
+        if(Auth::id()){
+            $checkLogin = 1 ;
+            $user = User::find(Auth::id());
+            // return $user->carts;
+            $carts = $user->carts->all();
+            $count = $user->carts->count();
+            $user_id = Auth::id();
+            $cartCount = Cart::where('user_id', "$user_id")->count();
+            $user = Auth::user();
+        }
+        else {
+            $user = 1;
+            $carts = 1;
+            $count = 1;
+            $user_id = 1;
+            $cartCount = 1;
+        }
         $mostPurshased = Purshasedbook::orderBy('count', 'DESC')->take(10)->get();
         // return $mostPurshased;
         $best = [];
@@ -42,13 +56,11 @@ class HomeController extends Controller
         }
         // return $best;
         // return $mostPurshased;
-        $user_id = Auth::id();
-        $cartCount = Cart::where('user_id', "$user_id")->count();
-        $user = Auth::user();
+
         // return $user;
         $categories = Category::take(10)->get();
         // return $categories;
-        $latest = Book::orderBy('id', 'desc')->take(12)->get();
-        return view('home', compact('latest', 'user', 'cartCount', 'categories', 'best', 'topRated', 'carts', 'count'));
+        $latest = Book::orderBy('id', 'desc')->take(16)->get();
+        return view('home', compact('latest', 'user', 'cartCount', 'categories', 'best', 'topRated', 'carts', 'count', 'checkLogin'));
     }
 }

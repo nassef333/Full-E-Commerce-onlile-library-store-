@@ -10,9 +10,6 @@ class InterestsController extends Controller
 {
     public function addToInterests($id){
         $user_id = Auth::id();
-
-
-
         $interesting = Interest::where('user_id', $user_id)->where('category_id', $id)->first();
         if($interesting) {
             return redirect()->back();

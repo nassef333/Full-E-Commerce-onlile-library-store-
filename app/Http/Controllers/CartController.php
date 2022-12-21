@@ -93,8 +93,8 @@ class CartController extends Controller
 
             
             Cart::where('user_id', $user_id)->delete();
-            return redirect()->back();
+            return redirect('/');
         }
-        return redirect('cart');
+        return redirect('/');
     }
 }

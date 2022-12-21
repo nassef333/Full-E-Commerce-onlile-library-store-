@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('purshasedbooks', function (Blueprint $table) {
             $table->id();
+            $table->integer('count');
             $table->foreignId('user_id')->unsigned()->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('book_id')->unsigned()->constrained('books')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

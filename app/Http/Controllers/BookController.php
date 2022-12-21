@@ -51,6 +51,7 @@ class BookController extends Controller
             ->take(10)
             ->get();
 
+            
         // $topRated['rating'] = Rating::where('book_id', $topRated->)->avg('rate');
         $rating = Rating::where('book_id', $id)->avg('rate');
         $rating = number_format($rating);
@@ -121,5 +122,35 @@ class BookController extends Controller
         return redirect('admin-books');
     }
 
+    public function searchBooks()
+    {        
+        $user = User::find(Auth::id());
+        $carts = $user->carts->all();
+        $count = $user->carts->count();
+        $books = Book::get();
+        return view('search-books', compact('books', 'user', 'carts', 'count'));
+    }
 
+    public function compare()
+    {
+        $user = User::find(Auth::id());
+        $carts = $user->carts->all();
+        $count = $user->carts->count();
+        $books = Book::get();
+        return view('compare', compact('user', 'carts', 'count', 'books'));
+    }
+    public function compareRequest(Request $request)
+    {
+        // return $request;
+        $user = User::find(Auth::id());
+        $carts = $user->carts->all();
+        $count = $user->carts->count();
+        $books = Book::get();
+        $book1 = Book::find($request->firstBook);
+        $book2 = Book::find($request->secondBook);
+        $category1 = $book1->category->name;
+        $category2 = $book2->category->name;
+        // return $category1;
+        return view('compare', compact('user', 'carts', 'count', 'books', 'book1', 'book2', 'books', 'category1', 'category2'));
+    }
 }
